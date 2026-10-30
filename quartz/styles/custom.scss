@@ -1,0 +1,260 @@
+@use "./variables.scss" as *;
+
+// Custom Typography & Aesthetics
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  border-bottom: 2px solid var(--lightgray);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+// Hero Showcase Component
+.hero-box {
+  padding: 2.25rem 2rem;
+  margin: 1.5rem 0 2.5rem 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.07) 0%, rgba(168, 85, 247, 0.07) 100%);
+  border: 1px solid var(--lightgray);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+
+  .hero-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--darkgray);
+    margin-bottom: 1.5rem;
+    max-width: 720px;
+  }
+}
+
+// Stats & Metrics Ribbon
+.stats-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+
+  .stat-card {
+    flex: 1;
+    min-width: 140px;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background: var(--light);
+    border: 1px solid var(--lightgray);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: var(--secondary);
+    }
+
+    .stat-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// Grid Cards for Connectors
+.connector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.connector-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none !important;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+    box-shadow: 0 16px 32px -8px rgba(37, 99, 235, 0.15);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    .card-icon {
+      font-size: 1.8rem;
+    }
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .card-summary {
+    font-size: 0.92rem;
+    color: var(--darkgray);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--lightgray);
+    padding-top: 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+}
+
+// Custom Pill Badges
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  &.badge-blue {
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+  }
+
+  &.badge-purple {
+    background: rgba(168, 85, 247, 0.12);
+    color: #a855f7;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+  }
+
+  &.badge-green {
+    background: rgba(34, 197, 94, 0.12);
+    color: #16a34a;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+  }
+
+  &.badge-amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  &.badge-cyan {
+    background: rgba(6, 182, 212, 0.12);
+    color: #0891b2;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+  }
+}
+
+// Elegant Tables
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--lightgray);
+  margin: 1.75rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+
+  th {
+    background: var(--lightgray);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 1rem;
+    color: var(--dark);
+    text-align: left;
+  }
+
+  td {
+    padding: 0.85rem 1rem;
+    border-top: 1px solid var(--lightgray);
+    font-size: 0.95rem;
+    color: var(--darkgray);
+  }
+
+  tr:hover td {
+    background: var(--highlight);
+  }
+}
+
+// Code Block Enhancements
+pre {
+  border-radius: 12px !important;
+  border: 1px solid var(--lightgray) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+// Blockquotes with subtle accent glow
+blockquote {
+  border-left: 4px solid var(--secondary) !important;
+  background: var(--highlight);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+  color: var(--darkgray);
+}
