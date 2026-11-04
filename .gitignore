@@ -12,3 +12,9 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+
+# Auto-added safety ignores
+*.pem
+*.key
+.env
+.env.local
